@@ -213,8 +213,8 @@ end
 ActionView::Base.send :include, CloudinaryHelper
 
 begin
-  require 'sass-rails'
-  class Sass::Rails::Resolver
+  require 'sprockets-sass'
+  class Sprockets::Sass::Functions
     alias :original_image_path :image_path
     def image_path(img)
       if Cloudinary.config.enhance_image_tag
